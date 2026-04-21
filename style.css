@@ -58,18 +58,12 @@ body {
     border-radius: 8px;
 }
 
-/* Placeholder pro ozdobné jméno (bude to obrázek) */
-.name-placeholder {
-    background-color: var(--placeholder-bg);
-    width: 300px;
-    height: 80px;
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #777;
-    font-weight: bold;
-    border-radius: 8px;
+/* Ozdobné jméno (Logo) */
+.name-logo {
+    display: block; /* Umožní obrázek vycentrovat */
+    width: 100%; /* Zajistí, že na mobilu nepřečouhne přes okraj */
+    max-width: 400px; /* Maximální šířka jména na velkém monitoru - můžeš si číslo libovolně upravit */
+    margin: 40px auto; /* 40px mezera nahoře a dole, "auto" obrázek vycentruje na střed doprava i doleva */
 }
 
 
@@ -117,24 +111,19 @@ body {
 
 
 /* --- 3. O MNĚ SEKCE --- */
-.about {
+.about-grid {
     display: flex;
-    align-items: center;
-    gap: 50px; /* Mezera mezi textem a fotkou */
+    align-items: center; /* Zarovná text a fotku na střed na výšku */
+    gap: 60px; /* Mezera mezi textem a fotkou */
 }
 
 .about-text {
-    flex: 1.5; /* Text zabírá více místa */
-}
-
-.about-text h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+    flex: 1.2; /* Text dostane o trochu více prostoru než fotka */
 }
 
 .about-image {
-    flex: 1; /* Fotka zabírá méně místa */
-    height: 450px; /* Výška vaší fotografie */
+    flex: 1; /* Fotka zabírá zbytek prostoru */
+    height: 450px;
     background-color: var(--placeholder-bg);
     border-radius: 12px;
 }
@@ -162,23 +151,21 @@ body {
 }
 
 .service-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 15px;
-    height: 60px; /* Zarovnání nadpisů služeb do jedné roviny */
+    
+    /* Smaž height: 40px; a nahraď ho tímto: */
+    min-height: 75px; 
 }
 
-.icon-placeholder {
-    width: 150px;
-    height: 150px;
-    background-color: rgba(255,255,255, 0.2); /* Světlejší zelený placeholder pro ilustrace */
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    font-size: 0.8rem;
+/* Ilustrace u služeb */
+.service-icon {
+    width: 130px; /* Nastaví šířku obrázků (číslo můžeš zvětšit nebo zmenšit podle libosti) */
+    height: 130px; /* Přidáme i pevnou výšku, aby byly všechny stejné */
+    object-fit: contain; /* Magické pravidlo: obrázek se úměrně zmenší tak, aby se do té 130x130 krabičky přesně vešel celý a nedeformoval se */
+    margin: 0 auto; /* Vycentruje obrázek přímo doprostřed */
+    display: block; /* Důležité, aby zafungovalo to vycentrování */
 }
 
 /* --- GLOBÁLNÍ ÚPRAVY PRO ELEGANTNÍ NADPISY --- */
@@ -249,8 +236,37 @@ body {
 
 
 /* --- 6. CENÍK SLUŽEB --- */
+/* --- DEKORACE V CENÍKU --- */
+
+/* 1. Nástěnka: Říkáme, že sekce ceníku je hlavní prostor pro pozicování */
 .pricing {
-    background-color: var(--green-line-color); /* Tvůj zelený odstín #355230 */
+    background-color: var(--green-line-color); /* Tímto vrátíme zpět to ztracené zelené pozadí */
+    position: relative; /* Nutné pro obrázky */
+    overflow: hidden; /* Nutné pro obrázky */
+}
+
+/* 2. Zajištění, aby byl text VŽDY nad obrázky (kdyby se překryly) */
+.pricing .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 3. Umístění hrášku (Vpravo nahoře) */
+.decor-hrasek {
+    position: absolute;
+    top: 40px; /* Vzdálenost odshora */
+    right: 10%; /* Vzdálenost zprava (10% vypadá lépe než fixní pixely na různých monitorech) */
+    width: 80px; /* Velikost obrázku - klidně si uprav podle potřeby */
+    z-index: 1; /* Zůstane v pozadí pod textem */
+}
+
+/* 4. Umístění jahod (Vpravo dole) */
+.decor-jahody {
+    position: absolute;
+    bottom: 20px; /* Vzdálenost odspodu */
+    right: 8%; /* Vzdálenost zprava */
+    width: 120px; /* Velikost obrázku - klidně si uprav podle potřeby */
+    z-index: 1; /* Zůstane v pozadí pod textem */
 }
 
 .pricing-content {
@@ -295,10 +311,12 @@ body {
 }
 
 .recipes-image {
-    flex: 1;
-    height: 400px;
-    border-radius: 40px 10px 40px 10px; /* Vytvoří nepravidelný tvar fotky */
-    overflow: hidden;
+    width: 100%;       /* Obrázek vyplní celou šířku svého sloupce v gridu */
+    max-width: 300px;
+    height: 600px;      /* Nastav si výšku, která ti pasuje k textu vedle */
+    object-fit: cover;  /* Zabrání deformaci – obrázek se v případě potřeby jemně ořízne */
+    border-radius: 12px; /* Zaoblené rohy, aby to ladilo se zbytkem webu */
+    display: block;
 }
 
 .recipes-text {
@@ -318,6 +336,14 @@ body {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap; /* Pro mobily */
+}
+
+/* Ikonka Instagramu v kontaktech */
+.insta-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%; /* Zakulatí ikonku do tvaru kolečka */
 }
 
 .contact-pill {
@@ -536,6 +562,41 @@ body {
     background-color: #b5b1a5;
 }
 
+/* --- NÁVOD K ZÁPISU JÍDELNÍČKU --- */
+.instructions-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-end; /* Zaručí, že obrázek bude zarovnaný k dolnímu okraji textu */
+}
+
+.instructions-text {
+    flex: 2; /* Text dostane více místa */
+}
+
+.custom-list {
+    margin-left: 25px;
+    list-style-type: disc;
+}
+
+.custom-list li {
+    margin-bottom: 15px; /* Větší mezery mezi odrážkami pro lepší čitelnost */
+    line-height: 1.6;
+}
+
+.instructions-image {
+    flex: 1; /* Obrázek dostane zbytek místa */
+    display: flex;
+    justify-content: flex-end; /* Zarovnání obrázku doprava */
+}
+
+.illustr-clipboard {
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    background-color: transparent;
+    border: 2px dashed #ccc;
+}
+
 /* --- MAGIE PRO MOBILNÍ TELEFONY (Responzivita) --- */
 @media (max-width: 768px) {
     /* Menu pod sebou */
@@ -569,6 +630,12 @@ body {
     .about-image {
         width: 100%;
         height: 350px;
+    }
+
+    /* O mně na mobilu pod sebe */
+    .about-grid {
+        flex-direction: column;
+        gap: 30px;
     }
 
     /* 4 služby v zeleném banneru pod sebou */
@@ -610,6 +677,7 @@ body {
 
     .recipes-image {
         width: 100%;
+        max-width: 100%;
         height: 300px;
     }
 
@@ -650,7 +718,7 @@ body {
         height: 250px;
         margin: 0 auto;
     }
-    
+
     /* Úpravy pro detail receptu na mobilu */
     .recipe-detail-card {
         padding: 40px 20px; /* Menší okraje uvnitř karty na mobilu */
@@ -669,5 +737,18 @@ body {
     .title-with-line h2 {
         font-size: 1.1rem;
     }
+
+    /* Úprava návodu na mobilu */
+    .instructions-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    /* Úprava dekorací v ceníku na mobilech */
+    .decor-hrasek, .decor-jahody {
+        opacity: 0.2; /* Obrázky vyblednou a nebudou rušit čtení textu */
+    }
+
 
 }
