@@ -329,13 +329,45 @@ body {
     text-decoration: underline;
 }
 
-
 /* --- 8. KONTAKTY --- */
+.contact-wrapper {
+    background-color: #faf9f5; /* Velmi jemný, teplý tón pro oživení bloku */
+    padding: 80px 0;
+}
+
+.contact-wrapper .elegant-heading {
+    margin-bottom: 50px; /* Větší prostor mezi nadpisem a tlačítky dýchá luxusem */
+}
+
 .contact-links {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; /* Pro mobily */
+    flex-wrap: wrap; /* Na mobilech se automaticky zalomí pod sebe */
+}
+
+.contact-pill {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #ffffff; /* Bílé tlačítko hezky vystoupí na béžovém pozadí */
+    border: 1px solid var(--green-line-color); /* Zelená linka ladí s webem */
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Minimalistický neviditelný stín */
+    transition: all 0.3s ease; /* Plynulá animace */
+}
+
+/* Efekt při najetí myší (Hover) */
+.contact-pill:hover {
+    transform: translateY(-4px); /* Tlačítko lehce "povyskočí" směrem nahoru */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Stín se prohloubí */
+    background-color: var(--green-line-color); /* Vyplní se zeleně */
+    color: var(--white-text); /* Písmo zbělá */
 }
 
 /* Ikonka Instagramu v kontaktech */
@@ -343,26 +375,7 @@ body {
     width: 30px;
     height: 30px;
     object-fit: cover;
-    border-radius: 50%; /* Zakulatí ikonku do tvaru kolečka */
-}
-
-.contact-pill {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border: 1px solid var(--text-color);
-    padding: 10px 30px;
-    border-radius: 50px; /* Vytvoří tvar pilulky */
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background 0.3s, color 0.3s;
-}
-
-.contact-pill:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+    border-radius: 50%;
 }
 
 .icon-placeholder-small {
@@ -373,6 +386,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 0.9rem;
 }
 
 /* --- STYLY PRO PODSTRÁNKY SLUŽEB --- */
@@ -442,14 +456,22 @@ body {
 .recipe-item {
     display: flex;
     gap: 40px;
-    align-items: center; /* Zarovnání na střed vertikálně */
+    align-items: center; 
+    margin-bottom: 60px; /* TÍMTO PŘIDÁME KRÁSNOU MEZERU POD KAŽDÝ RECEPT */
+}
+
+/* Toto zruší mezeru pod úplně posledním receptem na stránce, aby patička nebyla moc nízko */
+.recipe-item:last-child {
+    margin-bottom: 20;
 }
 
 .recipe-thumb {
     width: 250px;
     height: 250px;
     flex-shrink: 0;
-    border-radius: 8px; /* Jemně zaoblené rohy fotek */
+    border-radius: 8px; /* Jemně zaoblené rohy zůstávají */
+    object-fit: cover;  /* DŮLEŽITÉ: Fotka vyplní čtverec a nezkroutí se */
+    display: block;
 }
 
 .recipe-content {
@@ -504,7 +526,9 @@ body {
 .detail-img {
     flex: 1;
     height: 350px;
+    width: 100%; /* Přidáno pro správné roztažení */
     border-radius: 8px;
+    object-fit: cover; /* Přidáno, aby se fotky nedeformovaly */
 }
 
 /* Nadpisy s tlustou čárou (Ingredience, Postup) */
