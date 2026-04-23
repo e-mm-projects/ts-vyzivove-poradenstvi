@@ -151,7 +151,7 @@ body {
 }
 
 .service-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 15px;
     
@@ -161,8 +161,8 @@ body {
 
 /* Ilustrace u služeb */
 .service-icon {
-    width: 130px; /* Nastaví šířku obrázků (číslo můžeš zvětšit nebo zmenšit podle libosti) */
-    height: 130px; /* Přidáme i pevnou výšku, aby byly všechny stejné */
+    width: 150px; /* Nastaví šířku obrázků (číslo můžeš zvětšit nebo zmenšit podle libosti) */
+    height: 150px; /* Přidáme i pevnou výšku, aby byly všechny stejné */
     object-fit: contain; /* Magické pravidlo: obrázek se úměrně zmenší tak, aby se do té 130x130 krabičky přesně vešel celý a nedeformoval se */
     margin: 0 auto; /* Vycentruje obrázek přímo doprostřed */
     display: block; /* Důležité, aby zafungovalo to vycentrování */
@@ -300,6 +300,19 @@ body {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     margin: 30px 0;
+}
+
+
+/* Styl pro odkazy v ceníku */
+.price-link {
+    color: #ffffff; /* Písmo zůstane bílé */
+    text-decoration: none; /* Odstraníme výchozí podtržení */
+    transition: opacity 0.3s ease; /* Jemný efekt pro najetí myší */
+}
+
+.price-link:hover {
+    text-decoration: underline; /* Při najetí myší se text podtrhne */
+    opacity: 0.8; /* Lehce zprůhlední, aby bylo vidět, že na to klikáš */
 }
 
 
