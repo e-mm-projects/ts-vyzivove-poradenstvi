@@ -228,11 +228,19 @@ body {
     gap: 20px;
 }
 
-.illustr-1, .illustr-2 {
-    height: 250px;
-    background-color: transparent;
-    border: 2px dashed #ccc; /* Jen pro představu, kam přijdou obrázky */
+/* Sjednocený styl pro ilustrace ve službách */
+.illustr-1, .illustr-2, .illustr-large {
+    width: 100%;
+    height: auto; /* Výška se přizpůsobí obrázku */
+    display: block;
+    object-fit: contain; /* Ilustrace se nedeformuje a zobrazí se celá */
+    border: none; /* Odstraní tu přerušovanou čáru placeholderu */
+    background-color: transparent; /* Odstraní šedé pozadí */
 }
+
+/* Zachování konkrétních výšek pro desktop, aby se nerozhodil grid */
+.illustr-1, .illustr-2 { max-height: 250px; }
+.illustr-large { max-height: 450px; }
 
 
 /* --- 6. CENÍK SLUŽEB --- */
@@ -433,13 +441,6 @@ body {
 .highlight-blue {
     background-color: rgba(173, 216, 230, 0.6);
     text-decoration: none;
-}
-
-/* Velký placeholder pro ilustraci na podstránce */
-.illustr-large {
-    height: 400px;
-    background-color: transparent;
-    border: 2px dashed #ccc;
 }
 
 /* --- STRÁNKA SEZNAMU RECEPTŮ --- */
