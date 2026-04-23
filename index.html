@@ -181,7 +181,32 @@
         <hr class="green-line" style="margin: 0;">
     </section>
 
-    <hr class="green-line">
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-left">
+                <a href="#" class="footer-policy-link">Zásady ochrany osobních údajů</a>
+            </div>
+
+            <div class="footer-center">
+                <p>IČO: xxxxxxxx</p>
+                <p>Fyzická osoba zapsaná v živnostenském rejstříku</p>
+            </div>
+
+            <div class="footer-right">
+                <a href="#hero" class="back-to-top" aria-label="Zpět nahoru">↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault(); // Zastaví ten okamžitý teleport
+            window.scrollTo({
+                top: 0, // Vyveze nás na úplný začátek (vrchol) stránky
+                behavior: 'smooth' // A udělá to plynule
+            });
+        });
+    </script>
 
 </body>
 </html>
