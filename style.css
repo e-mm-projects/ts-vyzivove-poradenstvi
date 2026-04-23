@@ -209,16 +209,41 @@ body {
 
 /* Zvýraznění pozadí pod textem (dle screenů) */
 .highlight-green {
-    background-color: rgba(169, 209, 161, 0.4);
+    /* background-color: rgba(169, 209, 161, 0.4);
+    text-decoration: none; */
+    /* Vložíme obrázek štětce */
+    background-image: url('images/stetec_zeleny.png');
+    background-repeat: no-repeat; /* Zabrání tomu, aby se štětec "kachličkoval" */
+    background-position: center;  /* Zarovná štětec přesně na střed textu */
+    background-size: 100% 100%;   /* Roztáhne štětec přesně podle délky a výšky textu */
+    
     text-decoration: none;
+    padding: 10px 25px; /* Tímto přidáš textu kolem sebe prostor, aby "nevykukoval" ven ze štětce */
 }
+
 .highlight-pink {
-    background-color: rgba(244, 204, 204, 0.6);
+    /* background-color: rgba(244, 204, 204, 0.6);
+    text-decoration: none; */
+    background-image: url('images/stetec_ruzovy.png');
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: 100% 100%; 
+    
     text-decoration: none;
+    padding: 10px 25px;
+
 }
 .highlight-orange {
-    background-color: rgba(250, 222, 186, 0.7);
+    /* background-color: rgba(250, 222, 186, 0.7);
+    text-decoration: none; */
+    background-image: url('images/stetec_oranzovy.png');
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: 100% 100%; 
+    
     text-decoration: none;
+    padding: 10px 25px;
+
 }
 
 .services-illustrations {
@@ -439,8 +464,15 @@ body {
 
 /* Nová barva zvýraznění (modrá) pro "Jak se připravit" */
 .highlight-blue {
-    background-color: rgba(173, 216, 230, 0.6);
+    /* background-color: rgba(173, 216, 230, 0.6);
+    text-decoration: none; */
+    background-image: url('images/stetec_modry.png');
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: 100% 100%; 
+    
     text-decoration: none;
+    padding: 10px 25px;
 }
 
 /* --- STRÁNKA SEZNAMU RECEPTŮ --- */
