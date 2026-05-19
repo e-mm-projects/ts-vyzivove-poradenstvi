@@ -198,7 +198,7 @@ body {
     padding: 2px 15px;
     margin-bottom: 15px;
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-color);
     text-decoration: underline; /* Dočasně, pokud nemáš přesné barvy */
     text-decoration-thickness: 3px;
@@ -772,10 +772,10 @@ body {
 .brush-bg-wrapper::before {
     content: ""; /* Tento prvek nemá text, je to jen "duch" */
     position: absolute;
-    top: -20px; /* Posune štětec kousek nad okraj */
+    top: 50px; /* Posune štětec kousek nad okraj */
     left: -10px; /* Posune štětec kousek za levý okraj */
-    width: 600px; /* Velikost štětce - můžeš zvětšit/zmenšit */
-    height: 600px;
+    width: 650px; /* Velikost štětce - můžeš zvětšit/zmenšit */
+    height: 650px;
     background-image: url('images/stetec_ruzovy_siroky.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -788,10 +788,10 @@ body {
 .brush-bg-wrapper::after {
     content: "";
     position: absolute;
-    bottom: -50px; /* Posune dolů */
+    bottom: 50px; /* Posune dolů */
     right: -20px; /* Posune doprava */
-    width: 600px; 
-    height: 600px;
+    width: 750px; 
+    height: 750px;
     background-image: url('images/stetec_oranzovy_siroky.png');
     background-size: contain;
     background-repeat: no-repeat;
