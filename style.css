@@ -723,6 +723,45 @@ body {
     transform: translateY(-5px);
 }
 
+/* --- SLIDESHOW PRO RECEPTY NA HLAVNÍ STRÁNCE --- */
+
+/* Hlavní obal: Rozdělí prostor na levý (obrázek) a pravý (text) sloupec */
+.recipes-grid {
+    display: flex;
+    align-items: center; /* Zarovná text vertikálně na střed obrázku */
+    justify-content: center; /* Vycentruje celý blok na stránce */
+    gap: 80px; /* Udělá hezkou mezeru mezi obrázkem a textem */
+}
+
+/* Levý sloupec: Obal pro slideshow */
+.recipe-slideshow {
+    flex: 0 0 40%; /* Obal zabere max 40 % šířky */
+    max-width: 450px; /* Pojistka: Obrázek nikdy nebude širší než 450px */
+    display: grid; /* TOTO ZABRÁNÍ ŘAZENÍ POD SEBE: Připraví mřížku pro překrytí */
+}
+
+/* Samotné obrázky (naskládané na sobě) */
+.recipe-slideshow .slide {
+    grid-area: 1 / 1; /* Nacpe všechny 4 obrázky do jednoho a toho samého místa přes sebe */
+    width: 100%; /* Vyplní těch našich povolených 40 % / 450px */
+    height: auto; /* Výška se dopočítá automaticky podle obrázku z Canvy */
+    opacity: 0; /* V základu jsou všechny neviditelné */
+    transition: opacity 1.5s ease-in-out; /* Plynulé prolnutí */
+}
+
+/* Třída pro obrázek, který zrovna svítí */
+.recipe-slideshow .slide.active {
+    opacity: 1; /* Udělá ho viditelným */
+    z-index: 2; /* Jistota, že bude opravdu vrchní */
+}
+
+/* Pravý sloupec: Text */
+.recipes-text {
+    flex: 0 0 40%; /* Text dostane taky svůj vyhrazený prostor */
+}
+
+
+
 /* Responzivita pro mobily - na malém displeji je dáme pod sebe */
 @media (max-width: 768px) {
     .footer-grid {
@@ -735,7 +774,6 @@ body {
     }
 }
 
-/* --- MAGIE PRO MOBILNÍ TELEFONY (Responzivita) --- */
 @media (max-width: 768px) {
     /* Menu pod sebou */
     .nav {
@@ -808,15 +846,22 @@ body {
         text-align: center;
     }
 
-    /* Recepty fotka a text pod sebe */
+    /* Recepty (Slideshow) na mobilu pod sebe */
     .recipes-grid {
-        flex-direction: column;
+        flex-direction: column-reverse; /* Text skočí nad obrázek */
+        gap: 40px; 
+        text-align: center; 
     }
 
-    .recipes-image {
-        width: 100%;
+    .recipe-slideshow, 
+    .recipes-text {
+        flex: 100%; /* Zruší 40% šířku z desktopu */
         max-width: 100%;
-        height: 300px;
+    }
+
+    .recipe-slideshow {
+        max-width: 350px; /* Pojistka proti gigantičnosti na velkých telefonech */
+        margin: 0 auto; /* Vycentruje obrázek */
     }
 
     /* Nadpisy na mobilu o kousek menší */

@@ -41,7 +41,7 @@
         <div class="about-grid">
             <div class="about-text">
                 <h2 class="elegant-heading">O mně</h2>
-                <p>Jsem absolventkou České zemědělské univerzity, kde jsem získala inženýrský titul v oboru Výživa a potraviny. Díky tomuto oboru rozumím nejen výživě, ale také chápu složení potravin, znám potravinářskou legislativu a technologie výroby. To mi přináší ucelený vhled do stravování. Ráda Vám pomohu pochopit, na čem by měly být založeny Vaše stravovací návyky, ať už jsou Vaše cíle jakékoliv. Zastávám myšlenku, že neexistují nezdravé potraviny, ale pouze nezdravá množství - takže Vám rozhodně žádné potraviny nebudu zakazovat. Ke každému klientovi přistupuji individuálně. Mým cílem je předat Vám mé znalosti, abyste porozuměli výživě a uměli si do budoucna sestavovat jídelníček sami.</p>
+                <p>Jsem absolventkou České zemědělské univerzity, kde jsem získala inženýrský titul v oboru Výživa a potraviny. Díky tomuto oboru rozumím nejen výživě, ale také chápu složení potravin, znám potravinářskou legislativu a technologie výroby. To mi přináší ucelený vhled do stravování. Ráda Vám pomohu pochopit, na čem by měly být založeny Vaše stravovací návyky, ať už jsou Vaše cíle jakékoliv. Zastávám myšlenku, že neexistují nezdravé potraviny, ale pouze nezdravé množství - takže Vám rozhodně žádné potraviny nebudu zakazovat. Ke každému klientovi přistupuji individuálně. Mým cílem je předat Vám mé znalosti, abyste porozuměli výživě a uměli si do budoucna sestavovat jídelníček sami.</p>
             </div>
             
             <div class="image-placeholder about-image">
@@ -134,12 +134,12 @@
 
             <div class="pricing-info">
                 <h3>Jak se objednat na konzultaci</h3>
-                <p>Máte-li zájem o konzultaci, dejte mi vědět na e-mail. Stručně uveďte, s čím potřebujete pomoci, proč byste se rádi objednali a jaký by měl být cíl našeho setkání a také Váš zdravotní stav.</p>
+                <p>Máte-li zájem o konzultaci, dejte mi vědět na e-mail. Stručně uveďte, s čím potřebujete pomoci, proč byste se rádi objednali a jaký by měl být cíl našeho setkání.</p>
                 
                 <hr class="thin-white-line">
 
                 <h3>Kde se můžeme potkat</h3>
-                <p>On-line skrze platformy pro video hovory (ZOOM, Google Meet).</p>
+                <p>On-line skrze platformy pro video hovory, nebo osobně dle domluvy.</p>
             </div>
         </div>
     </section>
@@ -148,7 +148,12 @@
 
     <section id="recepty" class="recipes container section-padding">
         <div class="recipes-grid">
-            <img src="images/recepty.jpg" alt="Inspirace na recepty" class="recipes-image">
+            <div class="recipe-slideshow">
+                <img src="images/slideshow_recepty.png" alt="Recepty" class="slide active">
+                <img src="images/slideshow_losos.jpg" alt="Miska s lososem" class="slide">
+                <img src="images/slideshow_overnight_oats.jpg" alt="Pečená ovesná kaše" class="slide">
+                <img src="images/slideshow_vege.jpg" alt="Vegetariánská miska" class="slide">
+            </div>
         
             <div class="recipes-text">
                 <h2 class="elegant-heading">Inspirujte se mými recepty</h2>
@@ -188,7 +193,7 @@
             </div>
 
             <div class="footer-center">
-                <p>IČO: xxxxxxxx</p>
+                <p>IČO: 24620661</p>
                 <p>Fyzická osoba zapsaná v živnostenském rejstříku</p>
             </div>
 
@@ -206,6 +211,25 @@
                 behavior: 'smooth' // A udělá to plynule
             });
         });
+    </script>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.recipe-slideshow .slide');
+        
+        // Pokud na stránce najdeme obrázky, spustíme střídání
+        if (slides.length > 0) {
+            setInterval(() => {
+                // Skryjeme aktuální obrázek
+                slides[currentSlide].classList.remove('active');
+                
+                // Posuneme se na další obrázek (a pokud jsme na konci, skočíme na začátek)
+                currentSlide = (currentSlide + 1) % slides.length;
+                
+                // Zobrazíme nový obrázek
+                slides[currentSlide].classList.add('active');
+            }, 4000); // 4000 = střídání každé 4 vteřiny (můžeš si čas upravit)
+        }
     </script>
 
 </body>
