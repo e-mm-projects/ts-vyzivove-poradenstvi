@@ -151,18 +151,16 @@ body {
 }
 
 .service-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 15px;
-    
-    /* Smaž height: 40px; a nahraď ho tímto: */
     min-height: 75px; 
 }
 
 /* Ilustrace u služeb */
 .service-icon {
-    width: 150px; /* Nastaví šířku obrázků (číslo můžeš zvětšit nebo zmenšit podle libosti) */
-    height: 150px; /* Přidáme i pevnou výšku, aby byly všechny stejné */
+    width: 200px; /* Nastaví šířku obrázků (číslo můžeš zvětšit nebo zmenšit podle libosti) */
+    height: 200px; /* Přidáme i pevnou výšku, aby byly všechny stejné */
     object-fit: contain; /* Magické pravidlo: obrázek se úměrně zmenší tak, aby se do té 130x130 krabičky přesně vešel celý a nedeformoval se */
     margin: 0 auto; /* Vycentruje obrázek přímo doprostřed */
     display: block; /* Důležité, aby zafungovalo to vycentrování */
@@ -760,6 +758,63 @@ body {
     flex: 0 0 40%; /* Text dostane taky svůj vyhrazený prostor */
 }
 
+
+/* --- VELKÉ ŠTĚTCE V POZADÍ KONZULTACÍ --- */
+
+/* Hlavní obal sekce */
+.brush-bg-wrapper {
+    position: relative; /* Nutné, aby štětce neutekly mimo tuto sekci */
+    z-index: 1; /* Vytvoříme novou vrstvu, aby text byl vždy NAD štětci */
+    overflow: hidden; /* Zabrání tomu, aby štětce rozšířily stránku a udělaly horizontální scroll */
+}
+
+/* LEVÝ HORNÍ RŮŽOVÝ ŠTĚTEC */
+.brush-bg-wrapper::before {
+    content: ""; /* Tento prvek nemá text, je to jen "duch" */
+    position: absolute;
+    top: -20px; /* Posune štětec kousek nad okraj */
+    left: -10px; /* Posune štětec kousek za levý okraj */
+    width: 600px; /* Velikost štětce - můžeš zvětšit/zmenšit */
+    height: 600px;
+    background-image: url('images/stetec_ruzovy_siroky.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top left;
+    z-index: -1; /* MAGIE: Toto odsune štětec ÚPLNĚ DOZADU za texty a obrázky */
+    opacity: 0.7; /* Volitelné: Kdyby byl štětec moc sytý a rušil čtení, tady ho trochu zprůhledníš */
+}
+
+/* PRAVÝ DOLNÍ ORANŽOVÝ ŠTĚTEC */
+.brush-bg-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: -50px; /* Posune dolů */
+    right: -20px; /* Posune doprava */
+    width: 600px; 
+    height: 600px;
+    background-image: url('images/stetec_oranzovy_siroky.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    z-index: -1; /* Odsune dozadu */
+    opacity: 0.7;
+}
+
+/* --- Úprava štětců pro MOBILNÍ TELEFONY --- */
+@media (max-width: 768px) {
+    .brush-bg-wrapper::before {
+        width: 300px; /* Na mobilu je zmenšíme, aby nepřekryly celou obrazovku */
+        height: 300px;
+        top: -20px;
+        left: -20px;
+    }
+    .brush-bg-wrapper::after {
+        width: 350px;
+        height: 350px;
+        bottom: -20px;
+        right: -20px;
+    }
+}
 
 
 /* Responzivita pro mobily - na malém displeji je dáme pod sebe */
