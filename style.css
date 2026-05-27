@@ -28,7 +28,7 @@ body {
 }
 
 .section-padding {
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 .text-center {
@@ -43,7 +43,7 @@ body {
 .green-line {
     border: none;
     border-bottom: 15px solid var(--green-line-color); /* Silnější zelená linka */
-    width: 75%;
+    width: 95%;
     margin: 0 auto 20px auto;
     border-radius: 15px;
 }
@@ -125,15 +125,15 @@ body {
 /* Obalový box pro fotku */
 .about-image {
     flex: 1; 
-    height: 420px; 
+    height: 480px; 
     border-radius: 16px; 
     overflow: hidden;
-    margin-top: 105px; 
+    margin-top: 45px; 
 }
 
 /* Samotná fotka */
 .about-image img {
-    width: 100%; 
+    width: 112%; 
     height: 100%; /* Vrátili jsme na 100 %, aby fotka vyplnila box */
     object-fit: cover; /* Zaručí, že se fotka nedeformuje */
     object-position: center bottom; /* Přilepí fotku ke spodní hraně boxu a to, co přečuhuje nahoře, se ořízne */
