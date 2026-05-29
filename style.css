@@ -64,7 +64,7 @@ body {
     display: block; /* Umožní obrázek vycentrovat */
     width: 100%; /* Zajistí, že na mobilu nepřečouhne přes okraj */
     max-width: 400px; /* Maximální šířka jména na velkém monitoru - můžeš si číslo libovolně upravit */
-    margin: 40px auto; /* 40px mezera nahoře a dole, "auto" obrázek vycentruje na střed doprava i doleva */
+    margin: 40px auto 15px;
 }
 
 
