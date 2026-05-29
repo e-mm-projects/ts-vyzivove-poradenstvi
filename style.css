@@ -266,7 +266,7 @@ body {
 
 /* Sjednocený styl pro ilustrace ve službách */
 .illustr-1, .illustr-2, .illustr-large {
-    width: 100%;
+    width: 65%;
     height: auto; /* Výška se přizpůsobí obrázku */
     display: block;
     object-fit: contain; /* Ilustrace se nedeformuje a zobrazí se celá */
