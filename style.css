@@ -18,6 +18,7 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     line-height: 1.6;
+    overflow-x: hidden; /*zabrání scrollování do stran na celém webu */
 }
 
 /* Pomocné třídy */
@@ -42,9 +43,12 @@ body {
 /* Zelená linka podle popisu a obrázků */
 .green-line {
     border: none;
-    border-bottom: 15px solid var(--green-line-color); /* Silnější zelená linka */
-    width: 95%;
-    margin: 0 auto 20px auto;
+    border-bottom: 15px solid var(--green-line-color); 
+    margin: 0 0 20px 0;
+    width: 95vw; /* 95vw znamená: Vždy vezmi přesně 95 % šířky celého okna prohlížeče */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); /* Tyto 3 řádky linku perfektně vycentrují na střed obrazovky, i když je uvnitř úzkého kontejneru */
     border-radius: 15px;
 }
 
@@ -523,7 +527,7 @@ body {
 
 /* Toto zruší mezeru pod úplně posledním receptem na stránce, aby patička nebyla moc nízko */
 .recipe-item:last-child {
-    margin-bottom: 20;
+    margin-bottom: 20px;
 }
 
 .recipe-thumb {
@@ -793,7 +797,6 @@ body {
 .brush-bg-wrapper {
     position: relative; /* Nutné, aby štětce neutekly mimo tuto sekci */
     z-index: 1; /* Vytvoříme novou vrstvu, aby text byl vždy NAD štětci */
-    overflow: hidden; /* Zabrání tomu, aby štětce rozšířily stránku a udělaly horizontální scroll */
 }
 
 /* LEVÝ HORNÍ RŮŽOVÝ ŠTĚTEC */
@@ -842,11 +845,6 @@ body {
         bottom: -20px;
         right: -20px;
     }
-}
-
-
-/* Responzivita pro mobily - na malém displeji je dáme pod sebe */
-@media (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr; /* Na mobilu jen jeden sloupec */
         gap: 15px;
@@ -855,9 +853,6 @@ body {
     .footer-left, .footer-right {
         text-align: center;
     }
-}
-
-@media (max-width: 768px) {
     /* Menu pod sebou */
     .nav {
         display: flex;
