@@ -969,7 +969,7 @@ body {
 
     /* Nadpisy na mobilu o kousek menší */
     .elegant-heading {
-        font-size: 2.2rem;
+        font-size: 1.7rem;
     }
 
     /* Přeskládání podstránky služeb na mobilu */
@@ -1036,6 +1036,22 @@ body {
         opacity: 0.2; /* Obrázky vyblednou a nebudou rušit čtení textu */
     }
 
+    /* NOVÉ ÚPRAVY PRO MENU*/
+    .header {
+        border-bottom: none; /* Definitivně smaže černou linku */
+        background-color: transparent; /* Zprůhlední bílé pozadí */
+        
+        /* Magie: Toto vytrhne hlavičku z rozvržení. Přestane zabírat místo 
+           a obsah pod ní se posune nahoru. */
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        
+        z-index: 999; /* Zaručí, že ikonka bude VŽDY úplně nahoře nad textem a štětci */
+        padding-top: 25px; /* Odstrčí ikonku kousek od úplného vršku displeje */
+    }
+
     /* ROLOVACÍ HAMBURGER MENU NA MOBIL */
     /* 1. Zaručíme, že se hlavička seřadí pod sebe (ikonka nahoře, menu pod ní) */
     .flex-header {
@@ -1054,10 +1070,16 @@ body {
     .nav {
         display: none; 
         flex-direction: column;
-        align-items: flex-start; /* MAGIE: Toto přesune texty ze středu doleva */
+        align-items: flex-start; 
         width: 100%;
         gap: 15px;
-        padding-left: 15px;
+        
+        /*  Vytvoříme z menu bublinu s pozadím */
+        background-color: rgba(255, 255, 255, 0.96); /* Téměř neprůhledná bílá */
+        padding: 20px; /* Vnitřní prostor, aby odkazy nebyly nalepené na hranu bubliny */
+        border-radius: 15px; /* Hezky zakulatíme rohy */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Přidáme jemný stín, ať to vystoupí do prostoru */
+        box-sizing: border-box; /* Pojistka, aby se menu neroztáhlo mimo displej */
     }
 
     .nav.active {
