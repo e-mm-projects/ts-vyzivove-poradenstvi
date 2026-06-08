@@ -1037,26 +1037,33 @@ body {
     }
 
     /* ROLOVACÍ HAMBURGER MENU NA MOBIL */
-    .menu-toggle {
-        display: flex; 
-        margin-bottom: 15px; /* Mezera mezi tlačítkem a odkazy (když jsou rozbalené) */
-    }
-
-    /* Skryjeme původní menu a připravíme ho na rozbalování */
-    .nav {
-        display: none; /* ZÁKLADNÍ STAV: Skryto */
+    /* 1. Zaručíme, že se hlavička seřadí pod sebe (ikonka nahoře, menu pod ní) */
+    .flex-header {
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
         width: 100%;
     }
 
-    /* Tato třída se přidá pomocí JavaScriptu a menu zobrazí */
+    /* 2. Odsuneme hamburger ikonku (i křížek) úplně doprava */
+    .menu-toggle {
+        display: flex;
+        align-self: flex-end; /* Vytlačí tlačítko do pravého rohu */
+        margin: 0 0 15px 0; /* Zrušíme vycentrování na střed a necháme jen mezeru dole */
+    }
+
+    /* 3. Zarovnáme texty odkazů doleva */
+    .nav {
+        display: none; 
+        flex-direction: column;
+        align-items: flex-start; /* MAGIE: Toto přesune texty ze středu doleva */
+        width: 100%;
+        gap: 15px;
+    }
+
     .nav.active {
         display: flex; 
     }
 
-    /* Volitelná frajeřinka: Ikonka se po kliknutí změní na křížek */
+    /* Ikonka křížku*/
     .menu-toggle.is-active .bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
