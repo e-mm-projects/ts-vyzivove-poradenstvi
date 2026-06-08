@@ -1042,7 +1042,9 @@ body {
         background-color: transparent; 
         position: relative; 
         z-index: 999; 
-        padding-top: 15px; 
+        padding-top: 15px;
+        padding-bottom: 0; /* Smaže případnou neviditelnou výplň zespodu hlavičky */
+        margin-bottom: -30px; /* Mezera mezi nadpisem a ikonou */ 
     }
 
     /* ROLOVACÍ HAMBURGER MENU NA MOBIL */
@@ -1056,7 +1058,7 @@ body {
     .menu-toggle {
         display: flex;
         align-self: flex-end; /* Vytlačí tlačítko do pravého rohu */
-        margin: 0 15px 15px 0; /* Zrušíme vycentrování na střed a necháme jen mezeru dole */
+        margin: 0 15px 0px 0; /* Zrušíme vycentrování na střed a necháme jen mezeru dole */
         /* Zaručíme, že křížek bude VŽDY vrchní vrstva nad bílou bublinou */
         position: relative; 
         z-index: 1001;
@@ -1079,7 +1081,7 @@ body {
         /* Vnitřní odsazení: nahoře dáváme velkou mezeru (75px), 
            aby texty odkazů začínaly až bezpečně pod křížkem */
         /* Zápis: nahoře | vpravo | dole | vlevo */
-        padding: 75px 20px 30px 20px; 
+        padding: 20px 20px 30px 20px; 
         
         /* Zakulatíme jen spodní rohy, nahoře to lícuje s krajem telefonu */
         border-radius: 0 0 20px 20px; 
