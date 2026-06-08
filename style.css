@@ -1047,7 +1047,7 @@ body {
     .menu-toggle {
         display: flex;
         align-self: flex-end; /* Vytlačí tlačítko do pravého rohu */
-        margin: 0 0 15px 0; /* Zrušíme vycentrování na střed a necháme jen mezeru dole */
+        margin: 0 15px 15px 0; /* Zrušíme vycentrování na střed a necháme jen mezeru dole */
     }
 
     /* 3. Zarovnáme texty odkazů doleva */
@@ -1057,6 +1057,7 @@ body {
         align-items: flex-start; /* MAGIE: Toto přesune texty ze středu doleva */
         width: 100%;
         gap: 15px;
+        padding-left: 15px;
     }
 
     .nav.active {
