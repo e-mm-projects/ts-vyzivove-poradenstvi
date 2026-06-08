@@ -12,7 +12,15 @@
 
     <header class="header">
         <div class="container flex-header" style="justify-content: flex-start; gap: 30px;">
-            <div class="nav">
+
+            <!-- TLAČÍTKO PRO MOBILNÍ MENU -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <div class="nav" id="nav-links">
                 <a href="/">DOMŮ</a>
                 <a href="/#sluzby">SLUŽBY</a>
                 <a href="../recepty.html">RECEPTY</a>
@@ -62,6 +70,17 @@
 
         </article>
     </main>
+    <script>
+        // Najdeme naše tlačítko a menu podle ID
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        // Když se klikne na tlačítko, přidáme nebo odebereme "active" třídu
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-active'); // Změní čárky na křížek
+            navLinks.classList.toggle('active');      // Zobrazí nebo skryje menu
+        });
+    </script>
 
 </body>
 </html>
