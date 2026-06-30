@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vyzivasteri.cz | Ing. Tereza Smětalová – výživové poradenství</title>
+
+    <link rel="icon" type="image/png" href="/images/favicon4.png">
+    
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container flex-header" style="justify-content: flex-start; gap: 30px;">
+
+            <!-- TLAČÍTKO PRO MOBILNÍ MENU -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <div class="nav" id="nav-links">
+                <a href="/">DOMŮ</a>
+                <a href="/#sluzby">SLUŽBY</a>
+                <a href="../recepty.html">RECEPTY</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <article class="recipe-detail-card">
+            
+            <h1 class="elegant-heading text-center" style="margin-bottom: 50px;">Noky s kuřecím masem a sušenými rajčaty</h1>
+
+            <div class="recipe-detail-images">
+                <img src="../images/recepty/placeholder.jpg" alt="Francouzské tousty 1" class="detail-img">
+                <img src="../images/recepty/placeholder.jpg" alt="Francouzské tousty 2" class="detail-img">
+            </div>
+
+            <div class="title-with-line">
+                <h2>Ingredience (2-3 porce)</h2>
+                <div class="thick-line"></div>
+            </div>
+            
+            <ul class="recipe-ingredients">
+                <li>500g bramborových noků</li>
+                <li>300 g kuřecích prsou</li>
+                <li>50g sušených rajčat (naložených v oleji)</li>
+                <li>100-200 ml smetany na vaření (dle požadované krémovosti)</li>
+                <li>sůl, pepř</li>
+                <li>1 lžíce řepkového oleje</li><br>
+                <p><b>K servírování:</b></p>
+                <li>rukola</li>
+                <li>lahůdkové droždí nebo strouhaný parmazán</li>
+                <li>případně nasekané ořechy</li>
+            </ul>
+
+            <div class="title-with-line">
+                <h2>Postup</h2>
+                <div class="thick-line"></div>
+            </div>
+
+            <div class="recipe-instructions">
+                <p>1. Kuřecí prsa nakrájím na menší kousky. Na pánvi rozehřeji olej, maso zprudka orestuji ze všech stran, osolím a opepřím.</p>
+                <p>2. Pánev přiklopím pokličkou a nechám maso dusit přibližně 10-20 minut, dokud není měkké. </p>
+                <p>3. Přidám nakrájená sušená rajčata, noky (bez předvaření) a zaliji smetanou.</p>
+                <p>4. Promíchám, znovu přiklopím a nechám několik minut, aby noky změkly a nasákly omáčku. Občas jemně promíchám, aby se nepřichytily ke dnu.</p>
+                <p>5. Podávám s čerstvou rukolou, posypané parmazánem nebo lahůdkovým droždím, případně doplním nasekanými ořechy.</p>
+            </div>
+
+            <a href="../recepty.html" class="btn-back">Zpět na recepty</a>
+
+        </article>
+    </main>
+    <script>
+        // Najdeme naše tlačítko a menu podle ID
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        // Když se klikne na tlačítko, přidáme nebo odebereme "active" třídu
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-active'); // Změní čárky na křížek
+            navLinks.classList.toggle('active');      // Zobrazí nebo skryje menu
+        });
+    </script>
+
+</body>
+</html>
