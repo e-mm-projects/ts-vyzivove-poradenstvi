@@ -122,10 +122,6 @@ body {
     padding-bottom: 80px;
 }
 
-.subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 60px;
-}
 
 /* Grid pro 3 stejné obrázky */
 .hero-images-grid {
@@ -393,24 +389,6 @@ body {
 
 
 /* --- 7. RECEPTY --- */
-.recipes-grid {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-
-.recipes-image {
-    width: 100%;       /* Obrázek vyplní celou šířku svého sloupce v gridu */
-    max-width: 300px;
-    height: 600px;      /* Nastav si výšku, která ti pasuje k textu vedle */
-    object-fit: cover;  /* Zabrání deformaci – obrázek se v případě potřeby jemně ořízne */
-    border-radius: 12px; /* Zaoblené rohy, aby to ladilo se zbytkem webu */
-    display: block;
-}
-
-.recipes-text {
-    flex: 1;
-}
 
 .bold-link {
     font-weight: bold;
@@ -489,9 +467,6 @@ body {
     flex: 1.5;
 }
 
-.service-page-image {
-    flex: 1;
-}
 
 /* Odrážky (seznamy) v textu */
 .service-page-content ul {
@@ -696,19 +671,6 @@ body {
     line-height: 1.6;
 }
 
-.instructions-image {
-    flex: 1; /* Obrázek dostane zbytek místa */
-    display: flex;
-    justify-content: flex-end; /* Zarovnání obrázku doprava */
-}
-
-.illustr-clipboard {
-    width: 100%;
-    max-width: 350px;
-    height: 350px;
-    background-color: transparent;
-    border: 2px dashed #ccc;
-}
 
 /* --- 9. PATIČKA (FOOTER) --- */
 
@@ -742,16 +704,6 @@ body {
     text-align: right;
 }
 
-.footer-policy-link {
-    color: var(--white-text);
-    text-decoration: underline;
-    font-size: 0.85rem;
-    transition: opacity 0.3s;
-}
-
-.footer-policy-link:hover {
-    opacity: 0.7;
-}
 
 /* --- Odkaz na Zásady ochrany osobních údajů (vypadá jako text) --- */
 .plain-text-link {
@@ -877,14 +829,8 @@ body {
     .footer-left, .footer-right {
         text-align: center;
     }
+
     /* Menu pod sebou */
-    .nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
     .nav a {
         margin: 0;
     }
@@ -899,11 +845,6 @@ body {
         height: 250px;
     }
 
-    /* O mně se přeskládá: text nahoru, fotka pod něj */
-    .about {
-        flex-direction: column;
-        gap: 30px;
-    }
 
     .about-image {
         width: 100%;
